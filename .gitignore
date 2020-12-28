@@ -78,6 +78,9 @@ build/
 *.log
 *.scc
 
+# Visual Studio 2015/2017 cache/options directory
+.vs/
+
 # Visual C++ cache files
 ipch/
 *.aps
@@ -213,3 +216,9 @@ pip-log.txt
 
 #Mr Developer
 .mr.developer.cfg
+
+#############
+## JetBrains IDEs
+#############
+
+.idea/
