@@ -2,7 +2,7 @@
   <PropertyGroup>
     <ProductVersion>8.0.30703</ProductVersion>
     <ProjectGuid>{8BDBDEEC-CAB1-4C0B-86C2-7B0D0D3FE363}</ProjectGuid>
-    <TargetFramework>net40</TargetFramework>
+    <TargetFrameworks>net40;netstandard2.0</TargetFrameworks>
     <AssemblyTitle>Ghostscript.NET</AssemblyTitle>
     <Company>Habjan</Company>
     <Product>Ghostscript.NET</Product>    
@@ -10,8 +10,6 @@
     <Copyright>Copyright © 2013-2016 by Josip Habjan (habjan@gmail.com). All Rights Reserved.</Copyright>
     <AssemblyVersion>1.2.1</AssemblyVersion>
     <FileVersion>1.2.1</FileVersion>
-    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
-    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
@@ -47,5 +45,10 @@
   </PropertyGroup>
   <ItemGroup>
     <None Include="Ghostscript.NET.snk" />
+  </ItemGroup>
+  
+  <ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.0'">
+    <PackageReference Include="Microsoft.Win32.Registry" Version="5.0.0" />
+    <PackageReference Include="System.Drawing.Common" Version="5.0.0" />
   </ItemGroup>
 </Project>

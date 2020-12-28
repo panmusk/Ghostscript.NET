@@ -4,7 +4,7 @@
     <ProductVersion>8.0.30703</ProductVersion>
     <ProjectGuid>{3509F0F7-A7AD-4FEE-B388-AA817F3413E9}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <TargetFramework>net40</TargetFramework>
+    <TargetFrameworks>net461;net5.0-windows</TargetFrameworks>
     <AssemblyTitle>Ghostscript.NET.DisplayTest</AssemblyTitle>
     <Company>Habjan</Company>
     <Product>Ghostscript.NET.DisplayTest</Product>
@@ -12,9 +12,9 @@
     <AssemblyVersion>1.2.1</AssemblyVersion>
     <FileVersion>1.2.1</FileVersion>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
-    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
-    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <GenerateResourceUsePreserializedResources>true</GenerateResourceUsePreserializedResources>
     <PlatformTarget>AnyCPU</PlatformTarget>
+    <UseWindowsForms>true</UseWindowsForms>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
     <DebugType>full</DebugType>
@@ -36,9 +36,6 @@
     <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
     <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
   </PropertyGroup>
-  <ItemGroup>
-    <Reference Include="System.Windows.Forms" />
-  </ItemGroup>
   <ItemGroup>
     <Compile Update="FMain.cs">
       <SubType>Form</SubType>
@@ -86,6 +83,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="obj\x64\Debug\.NETFramework,Version=v4.0.AssemblyAttributes.cs" />
-    <Compile Remove="obj\x86\Debug\.NETFramework,Version=v4.0.AssemblyAttributes.cs" />
+  </ItemGroup>
+  <ItemGroup Condition=" '$(TargetFramework)' == 'net461' ">
+    <Reference Include="System.Windows.Forms" />
+    <PackageReference Include="System.Resources.Extensions" Version="5.0.0" />
+  </ItemGroup>
+  <ItemGroup Condition="'$(TargetFramework)' == 'net5.0-windows'">
+    <PackageReference Include="System.Resources.Extensions" Version="5.0.0" />
   </ItemGroup>
 </Project>

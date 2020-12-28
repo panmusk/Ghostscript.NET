@@ -4,15 +4,13 @@
     <ProductVersion>8.0.30703</ProductVersion>
     <ProjectGuid>{4C7B5A1E-2172-48A8-8139-5CB7A3D6065F}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <TargetFramework>net40</TargetFramework>
+    <TargetFrameworks>net40;netstandard2.0</TargetFrameworks>
     <AssemblyTitle>Ghostscript.NET.Samples</AssemblyTitle>
     <Company>Habjan</Company>
     <Product>Ghostscript.NET.Samples</Product>
     <Copyright>Copyright © 2013-2015 Josip Habjan (habjan@gmail.com)</Copyright>
     <AssemblyVersion>1.2.1</AssemblyVersion>
     <FileVersion>1.2.1</FileVersion>
-    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
-    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <PlatformTarget>AnyCPU</PlatformTarget>
   </PropertyGroup>
