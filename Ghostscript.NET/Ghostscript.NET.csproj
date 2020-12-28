@@ -3,15 +3,22 @@
     <ProductVersion>8.0.30703</ProductVersion>
     <ProjectGuid>{8BDBDEEC-CAB1-4C0B-86C2-7B0D0D3FE363}</ProjectGuid>
     <TargetFrameworks>net40;netstandard2.0</TargetFrameworks>
-    <AssemblyTitle>Ghostscript.NET</AssemblyTitle>
+    <AssemblyName>Ghostscript.NETFork</AssemblyName>
+    <AssemblyTitle>Ghostscript.NETFork</AssemblyTitle>
     <Company>Habjan</Company>
-    <Product>Ghostscript.NET</Product>    
+    <Product>Ghostscript.NETFork</Product>    
     <Description>Managed wrapper library around the Ghostscript native library (32-bit &amp; 64-bit), an interpreter for the PostScript language, PDF, related software and documentation.</Description>
     <Copyright>Copyright © 2013-2016 by Josip Habjan (habjan@gmail.com). All Rights Reserved.</Copyright>
-    <AssemblyVersion>1.2.1</AssemblyVersion>
-    <FileVersion>1.2.1</FileVersion>
+    <Version>1.3.0</Version>
+    <AssemblyVersion>1.3.0</AssemblyVersion>
+    <FileVersion>1.3.0</FileVersion>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PackageProjectUrl>https://github.com/DerMistkaefer/Ghostscript.NET</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/DerMistkaefer/Ghostscript.NET</RepositoryUrl>
+    <PackageLicenseExpression>AGPL-3.0-only</PackageLicenseExpression>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugType>full</DebugType>

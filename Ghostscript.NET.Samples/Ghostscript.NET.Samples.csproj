@@ -5,14 +5,21 @@
     <ProjectGuid>{4C7B5A1E-2172-48A8-8139-5CB7A3D6065F}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <TargetFrameworks>net40;netstandard2.0</TargetFrameworks>
-    <AssemblyTitle>Ghostscript.NET.Samples</AssemblyTitle>
+    <AssemblyName>Ghostscript.NETFork.Samples</AssemblyName>
+    <AssemblyTitle>Ghostscript.NETFork.Samples</AssemblyTitle>
     <Company>Habjan</Company>
-    <Product>Ghostscript.NET.Samples</Product>
+    <Product>Ghostscript.NETFork.Samples</Product>
     <Copyright>Copyright © 2013-2015 Josip Habjan (habjan@gmail.com)</Copyright>
-    <AssemblyVersion>1.2.1</AssemblyVersion>
-    <FileVersion>1.2.1</FileVersion>
+    <Version>1.3.0</Version>
+    <AssemblyVersion>1.3.0</AssemblyVersion>
+    <FileVersion>1.3.0</FileVersion>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PackageProjectUrl>https://github.com/DerMistkaefer/Ghostscript.NET</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/DerMistkaefer/Ghostscript.NET</RepositoryUrl>
+    <PackageLicenseExpression>AGPL-3.0-only</PackageLicenseExpression>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
     <DebugType>full</DebugType>
