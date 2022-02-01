@@ -49,7 +49,7 @@ namespace Ghostscript.NET.Viewer
 
         #region GhostscriptViewerDisplayHandler
 
-        public GhostscriptViewerDisplayHandler(GhostscriptViewer viewer)
+        public GhostscriptViewerDisplayHandler(GhostscriptViewer viewer) : base(viewer.Interpreter.GhostscriptLibrary)
         {
             _viewer = viewer;
         }
@@ -147,7 +147,7 @@ namespace Ghostscript.NET.Viewer
         {
             _viewer.FormatHandler.ShowPagePostScriptCommandInvoked = true;
 
-            if (!_viewer.ProgressiveUpdate)
+            if (!_viewer.ProgressiveUpdate || _viewer.Interpreter.GhostscriptLibrary.Revision > 950)
             {
                 int bytesPerPixel = 3;
 

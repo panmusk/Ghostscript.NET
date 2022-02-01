@@ -3,7 +3,7 @@
 // This file is part of Ghostscript.NET library
 //
 // Author: Josip Habjan (habjan@gmail.com, http://www.linkedin.com/in/habjan) 
-// Copyright (c) 2013-2016 by Josip Habjan. All rights reserved.
+// Copyright (c) 2013-2021 by Josip Habjan. All rights reserved.
 //
 // Author ported some parts of this code from GSView. 
 //
@@ -82,10 +82,15 @@ namespace Ghostscript.NET.Viewer
                     /DSCPageCount 0 def
                 ");
 
-            // open PDF support dictionaries
-            this.Execute(@"
+            if (this.Viewer.Interpreter.LibraryRevision < 927)
+            {
+                // this should be executed only for gs versions below 9.27
+
+                // open PDF support dictionaries
+                this.Execute(@"
                     GS_PDF_ProcSet begin
                     pdfdict begin");
+            }
         }
 
         #endregion
@@ -94,14 +99,30 @@ namespace Ghostscript.NET.Viewer
 
         public override void Open(string filePath)
         {
-            filePath = StringHelper.ToUtf8String(filePath);
+            int res = 0;
 
-            // open PDF file
-            int res = this.Execute(string.Format("({0}) (r) file runpdfbegin", filePath.Replace("\\", "/")));
+            if (StringHelper.HasNonASCIIChars(filePath))
+            {
+                IntPtr ptrStr = StringHelper.NativeUtf8FromString(string.Format("({0}) (r) file runpdfbegin", filePath.Replace("\\", "/")));
 
-            if(res == ierrors.e_ioerror)
+                // open PDF file
+                res = this.Execute(ptrStr);
+
+                System.Runtime.InteropServices.Marshal.FreeHGlobal(ptrStr);
+            }
+            else
+            {
+                // open PDF file
+                res = this.Execute(string.Format("({0}) (r) file runpdfbegin", filePath.Replace("\\", "/")));
+            }
+
+            if (res == ierrors.e_ioerror)
             {
                 throw new GhostscriptException("IO error for file: '" + filePath + "'", ierrors.e_ioerror);
+            }
+            else if (res == ierrors.e_invalidfileaccess)
+            {
+                throw new GhostscriptException("IO security problem (access control failure) for file: '" + filePath + "'", ierrors.e_ioerror);
             }
 
             this.Execute("/FirstPage where { pop FirstPage } { 1 } ifelse");
@@ -271,7 +292,7 @@ namespace Ghostscript.NET.Viewer
         {
             if (pageNumber >= this.FirstPageNumber && pageNumber <= this.LastPageNumber)
             {
-                this.Execute("Page pdfshowpage_init pdfshowpage_finish");
+                this.Execute("Page pdfshowpage");
             }
             else
             {

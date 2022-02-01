@@ -384,6 +384,10 @@ namespace Ghostscript.NET.Viewer
                         (int)DISPLAY_FORMAT_FIRSTROW.DISPLAY_BOTTOMFIRST).ToString());
 
 
+            if (_interpreter.LibraryRevision > 950)
+            {
+                args.Add("--permit-file-read=" + _filePath);
+            }
 
             args.Add("-dDOINTERPOLATE");
             args.Add("-dGridFitTT=0");
@@ -544,8 +548,6 @@ namespace Ghostscript.NET.Viewer
 
             this.Interpreter.Run(string.Format("/GraphicsAlphaBits {0}\n", _graphicsAlphaBits));
             this.Interpreter.Run(string.Format("/TextAlphaBits {0}\n", _textAlphaBits));
-
-            this.Interpreter.Run(string.Format("/Orientation {0}\n", (int)this.CurrentPageOrientation));
 
             this.Interpreter.Run(">> setpagedevice\n");
 
