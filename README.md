@@ -26,17 +26,6 @@
  * fixed CurrentPage -> TotalPages logging.
  * fixed watermark transparency bug for PDF.
  
-[If you have found **Ghostscript.NET** useful and has contributed to your project **consider donating**. Donating helps support **Ghostscript.NET**.](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=GS6S7RCAB7KAQ)
-
-[<img src="https://www.paypalobjects.com/en_US/GB/i/btn/btn_donateCC_LG.gif" alt="Click here to lend your support to: Ghostscript.NET and make a donation at pledgie.com !" />](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=GS6S7RCAB7KAQ)
-
-**LICENSE**
-
- Ghostscript.NET is distributed under the GNU Affero General Public License (see COPYING file).
-
-Josip Habjan (habjan@gmail.com)
-
-
 **Samples built on the top of the Ghostscript.NET library**
 
 Direct postscript interpretation via Ghostscript.NET:
@@ -46,3 +35,14 @@ Direct postscript interpretation via Ghostscript.NET:
 Ghostscript.NET.Viewer (supports viewing of the PDF, EPS and multi-page PS files):
 
 ![Ghostscript.NET.Viewer](http://a.fsdn.com/con/app/proj/ghostscriptnet/screenshots/gs-net-render.png)
+
+
+# License and Copyright
+
+Available under both, open-source AGPL and commercial license agreements.
+
+Please read the full text of the [AGPL license agreement](https://www.gnu.org/licenses/agpl-3.0.html) (which is also included here in file COPYING) to ensure that your use case complies with the guidelines of this license. If you determine you cannot meet the requirements of the AGPL, please contact [Artifex](https://artifex.com/contact/ghostscript-inquiry.php) for more information regarding a commercial license.
+
+Artifex is the exclusive commercial licensing agent for Ghostscript.
+
+
